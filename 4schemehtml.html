@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroBot - விவசாய திட்டங்கள்</title>
+    <link rel="icon" href="favicon.jpg" type="image/png">
+    <style>
+        /* Body styling with agricultural theme */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6e4; /* Light green background for a nature feel */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #2e7d32; /* Darker green for headings */
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2e7d32; /* Darker green for subheadings */
+            margin-top: 20px;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 60px;
+            background-color: #f5fff0; /* Soft green for the content box */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #c8e6c9; /* Light green border */
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .scheme-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            cursor: pointer;
+            flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+        }
+
+        .scheme-details {
+            flex: 1;
+            margin-right: 25px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Add spacing for smaller screens */
+            transition: all 0.3s ease;
+        }
+
+        .scheme-details:last-child {
+            margin-right: 0;
+        }
+
+        .scheme-details img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+        }
+
+        /* Button styling */
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .controls button {
+            font-size: 16px;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+        }
+        
+        .controls button:hover {
+            opacity: 0.85;
+        }
+        
+        .controls .start-btn {
+            background-color: #4caf50;
+            color: #fff;
+        }
+        
+        .controls .stop-btn {
+            background-color: #d32f2f;
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px;
+            }
+
+            .scheme-container {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+            }
+
+            .scheme-details {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 100%; /* Ensure each item takes full width */
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .controls button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .controls button {
+                font-size: 12px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>அரசு திட்டங்கள் மற்றும் வகைப்பாடு</h1>
+    </center>
+    <audio id="background-audio" loop>
+        <source src="decision2.mp3" type="audio/mpeg">
+        உங்கள் உலாவி ஆடியோ தொகுப்பைப் பொறுத்திருக்கவில்லை.
+    </audio>
+    <div class="controls">
+        <button class="start-btn" onclick="startBackgroundAudio()">தொடங்கு</button>
+        <button class="stop-btn" onclick="stopBackgroundAudio()">நிறுத்து</button>
+        <button class="back-button" onclick="goBack()">முந்தைய பக்கம்</button>
+    </div>
+
+    <div class="content">
+        <p>எண்களைக் கிளிக் செய்வதன் மூலம் திட்டத்தைப் பற்றி நீங்கள் அறிந்து கொள்ளலாம்</p>
+
+        <!-- Scheme Details -->
+        <div class="scheme-container">
+            <div class="scheme-details" onclick="playAudio('s1')">
+                <strong>1. வேளாண் எந்திரங்கள் மற்றும் கருவிகளின் செயல் விளக்கம்</strong><br><br>
+                <center><img src="1image.jpg" height="70px" width="80px" alt=""></center>
+                <strong>வநாக்கம்:</strong> புதிதாக உருோக்கப்பட்ட (அ) கண்டுபிடிக்கப்பட்ட வேளாண் எந்திரங்கள் மற்றும் கருவிகமள விேொயிகளிமடவய பிரபலப்படுத்துதல்.<br>
+                <strong>நிதி அமமப்பு:</strong> நதியானது இந்திய அரசினால் (100%) ேழங்கப்படுகிறது.<br>
+                <strong>வேமலகளின் விேரம்:</strong> விேொயிகளின் நிலங்களில் வேளாண் எந்திரங்கள் மற்றும் கருகமள குறித்த செயல்விளக்கமளித்தல்.<br>
+                <strong>தகுதி:</strong> அமனத்து விேொயிகளும்.
+                <audio id="s1" src="image14audio.mp3"></audio>
+            </div>
+
+            <div class="scheme-details" onclick="playAudio('s2')">
+                <strong>2. வேளாண் எந்திரங்களின் இயக்கம் மற்றும் பராமரிப்பு குறித்த விேொயிகளுக்கான பயிற்சி</strong><br><br>
+                <center><img src="2image.jpg" height="75px" width="90px" alt=""></center>
+                <strong>வநாக்கம்:</strong> வேளாண் இயந்திரங்கள்/கருவிகள்/உபகரணங்கமள மகயாளுதல் மற்றும் பராமதித்தமலக் குறித்த பயிற்சியளித்தல்.<br>
+                <strong>நிதி அமமப்பு:</strong> நதியானது இந்திய அரசினால் (100%) ேழங்கப்படுகிறது.<br>
+                <strong>வேமலகளின் விேரம்:</strong> விேொயிகளின் நிலங்களில் வேளாண் எந்திரங்கள் மற்றும் கருகமள குறித்த செயல்விளக்கமளித்தல்.<br>
+                <strong>தகுதி:</strong> அமனத்து விேொயிகளும்.
+                <audio id="s2" src="image24audio.mp3"></audio>
+            </div>
+
+            <div class="scheme-details" onclick="playAudio('s5')">
+                <strong>3. மமலப் பகுதியில் அபிவிருத்தி திட்டத்தின் கீழ் மண் மற்றும் நீர் பாதுகாப்பு</strong><br><br><br>
+                <center><img src="3image.jpg" height="70px" width="70px" alt=""></center>
+                <strong>வேமலகளின் விேரம்:</strong> தடுப்பமண், ேடிகால்களின் சுத்திகரிப்பு பணிகள், மமழநீர் வெமிப்பு அமமப்புகள், சமூக பாென கிணறுகள், பாமதகளின் சீரமமப்பு மற்றும் பணிகமள விரிவுபடுத்தல்.<br>
+                <strong>தகுதி:</strong> வதர்ந்சதடுக்கப்பட்ட நீர்நிமலகளில் அடங்கியுள்ள அமனத்து விேொயிகளின் நிலங்களும் மானியம் சபற தகுதியுமடயனு.<br>
+                <audio id="s5" src="image34audio.mp3"></audio>
+            </div>
+
+            <div class="scheme-details" onclick="playAudio('s6')">
+                <strong>4. அமணகள் புனரமமப்பு மற்றும் என்ஏடீபி கீழ் வமம்பாட்டுத் திட்டம்</strong><br><br><br>
+                <center><img src="4image.jpg" height="70px" width="80px" alt=""></center>
+                <strong>வநாக்கங்கள்</strong> நீர்ப்பிடிப்பு பகுதிகள் மற்றும் பல்வநாக்கு நீர்த்வதக்கங்களில் ேண்டல் படிமேத் தடுத்தல் மூலம் மண் இழப்பு கட்டுப்படுத்தப்பட்டு தடுக்கப்படுகிறது.<br>
+</div>    </div>
+</div>
+
+</div>
+
+<script>
+let currentAudio = null;
+
+function playAudio(id) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    currentAudio = document.getElementById(id);
+    currentAudio.play();
+}
+
+function startBackgroundAudio() {
+    const backgroundAudio = document.getElementById('background-audio');
+    backgroundAudio.play();
+}
+
+function stopBackgroundAudio() {
+    const backgroundAudio = document.getElementById('background-audio');
+    backgroundAudio.pause();
+    backgroundAudio.currentTime = 0; // Reset audio
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0; // Reset current audio
+    }
+}
+
+function goBack() {
+    window.history.back();
+}
+</script>
+</body>
+</html>
